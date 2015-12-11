@@ -51,7 +51,7 @@ cholesterol = food_info["Cholestrl_(mg)"]
 selenium_and_thiamin = food_info[["Selenium_(mcg)", "Thiamin_(mg)"]]
 ```
 * Index data by row / column index  
-This is most tricky one. When the data is loaded into dataframe, each row get a index number ( **start from 0** ), each column get a index name ( **the csv column name** ). Even you do something like **```dropna()```** to create a new dataframe, the new dataframe will have the same row index / column index number with the old one. You can use **```reset_index(drop=True)```** to reindex the index number for a new generated dataframe. After this call, the index number for each row will start from 0 again, and because ```drop=True```, the index column in new dataframe will be removed.  
+This is most tricky one. When the data is loaded into dataframe, each row get a index name ( **If you don't specify, it will be number from 0, if you specify, it can be a string, for example, in pivot_table call, the index name will be the column value of index parameter** ), each column get a index name ( **the csv column name** ). Even you do something like **```dropna()```** to create a new dataframe, the new dataframe will have the same row index / column index number with the old one. You can use **```reset_index(drop=True)```** to reindex the index number for a new generated dataframe. After this call, the index number for each row will start from 0 again, and because ```drop=True```, the index column in new dataframe will be removed.  
 Access data by row / column index is done by **```loc```** method  
 ```python
 food_info.loc[3,"Sodium_(mg)"]

@@ -40,12 +40,12 @@ print(new_titanic_survival)
 new_titanic_survival = titanic_survival.dropna(subset=["age", "body", "home.dest"])
 ```
 ## Making pivot tables  
-Pivot table means aggregation table based on some columns 
+Pivot table means aggregation table based on some columns  
 ```python
 import numpy as np
 
 # This will compute the mean survival chance and the mean age for each passenger class
-# index is the group column
+# index is the group column, and the value of index column will be the result dataframe index name ( index name is row name )
 # values is a aggregation column list
 passenger_survival = titanic_survival.pivot_table(index="pclass", values=["age", "survived"], aggfunc=np.mean)
 print(passenger_survival)
