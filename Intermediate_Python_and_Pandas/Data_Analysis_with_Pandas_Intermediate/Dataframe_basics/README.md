@@ -25,6 +25,11 @@ There are severals ways of indexing data in dataframe
 ```python  
 #The food_info data has been loaded in.
 #Print the first element in the first row.
+#iloc can accpet following types of parameters, the method loc can take the same parameter types
+#    an integer
+#    list of integers
+#    slice object
+#    Boolean array --- like filtering
 print(food_info.iloc[0,0])
 
 #Print the whole first row.
